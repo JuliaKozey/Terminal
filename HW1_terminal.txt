@@ -1,0 +1,51 @@
+1) Посмотреть где я// pwd
+2) Создать папку// mkdir papka_1
+3) Зайти в папку// cd papka_1
+4) Создать 3 папки// mkdir papka_11 papka_12 papka_13
+5) Зайти в любую папку// cd papka_13
+6) Создать 5 файлов (3 txt, 2 json)// touch fayl1.txt fayl2.txt fayl3.txt fayl1.json fayl2.json
+7) Создать 3 папки// mkdir papka_131 papka_132 papka_133
+8) Вывести список содержимого папки// ls -la
+9) Открыть любой txt файл// cat fayl1.txt
+10) написать туда что-нибудь, любой текст// cat >> fayl1.txt
+11) сохранить и выйти// ctrl+c 
+12) Выйти из папки на уровень выше// cd ../
+13) переместить любые 2 файла, которые вы создали, в любую другую папку// mv papka_13/fayl1.txt papka_13/fayl2.txt papka_11/
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку// cp papka_13/fayl1.json papka_13/fayl2.json papka_12/
+15) Найти файл по имени// find /users/juliakozey/qa_36/ -name fayl1.txt
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает//  tail -f fail1.txt 
+(можно использовать опцию -f для мониторинга изменений в файле и отображения любых новых строк, добавленных в конец файла в режиме реального времени)
+
+17) вывести несколько первых строк из текстового файла// получилось сделать двумя командами
+cat fayl1.txt | sed -n 1,5p
+head -n5 fayl1.txt
+18) вывести несколько последних строк из текстового файла// tail -n5 fayl1.txt
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает// less fayl1.txt
+20) вывести дату и время// date
+-------------------------------
+
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5006/terminal-hw-request// 
+curl http://162.55.220.72:5006/terminal-hw-request
+curl "http://162.55.220.72:5006/get_method?name=Your_String&age=Your_number"
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13// 
+
+nano bash_ script.sh (создаем файл bash_script.sh и в нем пишем)
+#!/bin/bash
+cd papka_1
+mkdir papka_11 papka_12 papka_13
+cd papka_13
+touch fayl1.txt fayl2.txt fayl3.txt fayl1.json fayl2.json
+mkdir papka_131 papka_132 papka_133
+ls -la
+mv {fayl1.txt,fayl2.txt} papka_131
+ctrl+o
+Enter
+ctrl+x
+bash bash_script.sh
+Enter  
+-------------------------------
+1) Посмотреть где я - pwd
+2) Создать папку - mkdir foldername
